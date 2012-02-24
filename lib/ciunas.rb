@@ -1,0 +1,1 @@
+require 'ciunas/logger'

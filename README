@@ -1,0 +1,5 @@
+Ciúnas - rack middleware that silences the rails/rack logger for specific actions.
+
+This is just a packaged up version of the silenceable logger code by Dennis Reimann.
+
+See Dennis's blog post for more info: http://dennisreimann.de/blog/silencing-the-rails-log-on-a-per-action-basis/
