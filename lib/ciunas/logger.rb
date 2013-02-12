@@ -4,6 +4,7 @@ module Ciunas
       @app = app
       @opts = opts
       @opts[:silenced] ||= []
+      super
     end
 
     def call(env)
@@ -21,4 +22,4 @@ module Ciunas
       end
     end
   end
-end  
+end
