@@ -3,12 +3,12 @@ module Ciunas
     def initialize(app, opts = {})
       @app = app
       @opts = opts
-      @opts[:silenced] ||= []
+      @silenced = @opts.delete(:silenced) || []
       super
     end
 
     def call(env)
-      if env['X-SILENCE-LOGGER'] || @opts[:silenced].any? {|m| m === env['PATH_INFO'] }
+      if env['X-SILENCE-LOGGER'] || @silenced.any? {|m| m === env['PATH_INFO'] }
         begin
           # temporarily set the rails log level to error
           tmp_log_level = ActiveSupport::BufferedLogger::Severity::ERROR
