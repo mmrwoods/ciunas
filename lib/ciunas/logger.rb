@@ -4,7 +4,8 @@ module Ciunas
       @app = app
       @opts = opts
       @silenced = @opts.delete(:silenced) || []
-      super
+
+      super if Rails::VERSION::STRING >= "3.2"
     end
 
     def call(env)
